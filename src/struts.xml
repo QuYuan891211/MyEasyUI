@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+	<!-- 
+		理论：struts2的插件包，就能将Action中的List转成JSON文本
+		实战：
+		》导入struts2-json-plugin-2.3.1.1.jar包到/WEB-INF/lib目录下
+		》自已的包继承json-default包，且json-default包继承struts-default包
+		  那么自已的包能用到json-default和struts-default这二个包中的功能
+		》在Action中写一个getXxx()方法返回需要转成JSON字符串的对象 
+	-->
+
+<package name="myPackage" extends="json-default" namespace="/">
+	<global-results>
+		<result name="SUCCESS" type="json"/>
+	</global-results>
+	<action name="findCityRequest" method="findCityByProvince" class="cn.qy.province.action.ProvinceCityAreaAction">
+	</action>
+	<action name="findAreaRequest" method="findAreaByCity" class="cn.qy.province.action.ProvinceCityAreaAction">
+	</action>
+</package>
+
+
+</struts>
