@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easyui_进度条</title>
+    <link rel="stylesheet" herf="../themes/icon.css" type="text/css">
+    <link rel="stylesheet" href="../themes/default/easyui.css" type="text/css">
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+</head>
+<body>
+<div id="progress"></div>
+<input type="button" id="start" value="开始" style="font-size:111px"></input>
+<script type="text/javascript">
+    $("#progress").progressbar({
+        width:"auto",
+        height:44,
+        value:0
+    })
+</script>
+<script type="text/javascript">
+    var timeID = null;
+    var nowNumber = 0;
+    $(":button").click(function () {
+        $("#progress").progressbar("setValue",0)
+        $(":button").attr("disabled","disabled");
+        timeID = window.setInterval(function () {
+
+            var num = getNum();
+            nowNumber = nowNumber + num;
+            if(nowNumber< 100){
+                $("#progress").progressbar("setValue",nowNumber);
+            }else {
+
+                $("#progress").progressbar("setValue",100);
+                window.clearInterval(timeID);
+                $(":button").removeAttr("disabled");
+                nowNumber = 0;
+            }
+
+        },1000);
+    })
+
+    function getNum() {
+        return Math.floor(Math.random()*9)+1;
+    }
+</script>
+</body>
+</html>

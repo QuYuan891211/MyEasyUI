@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Easyui-window</title>
+    <link rel="stylesheet" herf="../themes/icon.css" type="text/css">
+    <link rel="stylesheet" href="../themes/default/easyui.css" type="text/css">
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+</head>
+<body>
+    <input type="button" id="open1" value="打开窗口1" style="font-size: 66px">
+    <input type="button" id="open2" value="打开窗口2" style="font-size: 66px">
+    <div id="window1">
+    </div>
+    <div id="window2"></div>
+<script type="text/javascript">
+    $("#open1").click(function () {
+        $("#window1").window({
+            title:"窗口1",
+            width:200,
+            height:300,
+            top:100,
+            left:400,
+            collapsible:false,
+            minimizable:false,
+            maximizable:false,
+            closable:true,
+            draggable:false,
+            resizable:false,
+            href:"06_progressbar.html"
+        })});
+</script>
+    <script type="text/javascript">
+        $("#open2").click(function () {
+            $("#window2").window({
+                title:"窗口2",
+                width:200,
+                height:300,
+                top:100,
+                left:400,
+                collapsible:false,
+                minimizable:false,
+                maximizable:false,
+                closable:true,
+                draggable:false,
+                resizable:false,
+                href:"03_combobox.html"
+            })
+    });
+</script>
+
+</body>
+</html>

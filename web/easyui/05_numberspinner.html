@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easyui-数字微调器</title>
+    <link rel="stylesheet" herf="../themes/icon.css" type="text/css">
+    <link rel="stylesheet" href="../themes/default/easyui.css" type="text/css">
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+</head>
+<body>
+    <input id="number" style="width: 80px">
+    <input id="number2" type="text"><span></span>
+    <script type="text/javascript">
+        $("#number").numberspinner({
+            min:0,
+            max:100,
+            editable:false,
+            onSpinUp:function () {
+                var number = $("#number").numberspinner("getValue");
+                $("#number2").val(number).css("color", "red");
+                if (number == 100) {
+                    $("#number2").attr("disabled", "disabled");
+                    $("span:first").html("商品已满").css("color", "blue");
+                }
+            },
+            onSpinDown:function () {
+                var number = $("#number").numberspinner("getValue");
+                $("#number2").val(number).css("color","red");
+                if( number ==100){
+                    $("#number2").attr("disabled","disabled");
+                    $("span:first").html("商品已满").css("color","blue");
+                }
+            }
+        })
+
+    </script>
+
+</body>
+</html>

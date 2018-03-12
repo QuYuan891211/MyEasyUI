@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Easyui-databox</title>
+    <link rel="stylesheet" herf="../themes/icon.css" type="text/css">
+    <link rel="stylesheet" href="../themes/default/easyui.css" type="text/css">
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+</head>
+<body>
+    <input id="datebox" type="text">
+<script type="text/javascript">
+    $("#datebox").datebox({
+        required:true,
+        currentText:"today",
+        okText:"ok",
+        onSelect:function (date) {
+            alert(date.getFullYear() + "年" + date.getMonth() + "月" + date.getDate()+ "日");
+        }
+    })
+</script>
+</body>
+</html>

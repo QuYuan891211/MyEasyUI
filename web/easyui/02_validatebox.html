@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Easyui-验证框</title>
+    <link rel="stylesheet" herf="../themes/icon.css" type="text/css">
+    <link rel="stylesheet" href="../themes/default/easyui.css" type="text/css">
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+</head>
+<body>
+    <input id="vv">
+<script type="text/javascript">
+    $("#vv").validatebox({
+        required:true,
+        validType:["length[1,4]","chinese"]
+    })
+
+
+</script>
+<script type="text/javascript">
+    $.extend($.fn.validatebox.defaults.rules,{
+        chinese:{
+        validator:function (value) {
+            if(/^[\u3220-\uFA29]+$/.test(value)){
+                return true;
+            }
+        },
+        message:"用户必须输入中文"
+        }
+        }
+
+    );
+</script>
+</body>
+</html>
