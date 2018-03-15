@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="spring-lib">
+    <CLASSES>
+      <root url="file://D:/CS/JavaWeb/WebLibs/spring-lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://D:/CS/JavaWeb/WebLibs/spring-lib" recursive="false" />
+  </library>
+</component>

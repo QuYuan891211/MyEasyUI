@@ -6,7 +6,7 @@ import java.util.UUID;
 public class Emp {
    private String id;
    private String name;
-   private float sal;
+   private double salary;
 
     public Emp() {
     }
@@ -27,11 +27,11 @@ public class Emp {
         this.name = name;
     }
 
-    public float getSal() {
-        return sal;
+    public double getSalary() {
+        return salary;
     }
 
-    public void setSal(float sal) {
-        this.sal = sal;
+    public void setSalary(double sal) {
+        this.salary = sal;
     }
 }

@@ -1,4 +1,4 @@
-package cn.qy.emp.entity.utils;
+package cn.qy.emp.utils;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
