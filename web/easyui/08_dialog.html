@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Easyui_对话框</title>
+    <link rel="stylesheet" herf="../themes/icon.css" type="text/css">
+    <link rel="stylesheet" href="../themes/default/easyui.css" type="text/css">
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+</head>
+<body>
+    <div id="dialog"></div>
+    <input type="button" value="打开对话框" style="font-size: 50px">
+<script type="text/javascript">
+    $(":button").click(function () {
+        $("#dialog").dialog({
+            width:300,
+            height:200,
+            title:"haha",
+            toolbar:[{
+                text:'编辑',
+                iconCls:'icon-edit',
+                handler: function () {
+                    alert("edit");
+                }
+            }],
+            resizable:true,
+            minimizable:true,
+            maximizable:true
+
+        })
+    })
+</script>
+</body>
+</html>

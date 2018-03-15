@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easyui-消息</title>
+    <link rel="stylesheet" herf="../themes/icon.css" type="text/css">
+    <link rel="stylesheet" href="../themes/default/easyui.css" type="text/css">
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+</head>
+<body>
+    <input id="warning" type="button" value="警示" style="font-size: 40px">
+    <input id="confirm" type="button" value="确认" style="font-size: 40px">
+    <input id="show" type="button" value="显示" style="font-size: 40px">
+    <input id="input" type="button" value="输入" style="font-size: 40px">
+
+<script type="text/javascript">
+    $("#warning").click(function () {
+        $.messager.alert('警告','警告信息');
+    })
+    $("#confirm").click(function () {
+        $.messager.confirm('确认','确认信息');
+    })
+    $("#show").click(function () {
+        $.messager.alert('显示','显示信息');
+    })
+    $("#input").click(function () {
+        $.messager.prompt('输入','输入信息');
+    })
+</script>
+</body>
+</html>
