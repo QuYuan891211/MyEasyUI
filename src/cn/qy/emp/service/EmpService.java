@@ -20,4 +20,5 @@ public class EmpService {
     public void add(Emp emp) throws SQLException {
         empDao.add(emp);
     }
+
 }

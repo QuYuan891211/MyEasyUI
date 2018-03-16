@@ -56,6 +56,7 @@
         </div>
         <div id="center" data-options="region:'center', split:false,title:'content',collapsible:true,iconCls:'icon-reload'" style="padding:5px;background:#eee;">
             <div id="add_emp_panel" class="easyui-panel"></div>
+            <table id="dg"></table>
         </div>
     </div>
 
@@ -76,8 +77,27 @@
 
 
 
+
         })
     </script>
+     <script type="text/javascript">
+         $("#tree").tree({
+             onClick:function (node) {
+                 if("显示员工数据"== node.text){
+                    $("#dg").datagrid({
+                        columns:[[
+                            {field:'name',title:'姓名',width:100},
+                            {field:'salary',title:'薪水',width:100}
+                        ]],
+                        singleSelect:true,
+                        fitColumns:true,
+                        url:"${pageContext.request.contextPath}/findEmp?time=" + new Date().getTime()
+
+                    });
+                 }
+             }
+         })
+     </script>
 <script type="text/javascript">
    function addEmp() {
         var name = $("#empName").val();
@@ -96,5 +116,6 @@
 
     }
 </script>
+
 </body>
 </html>

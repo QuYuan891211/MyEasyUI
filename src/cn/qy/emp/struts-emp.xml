@@ -12,7 +12,7 @@
         <action name="addEmp" class="empActionID" method="addEmp">
 
         </action>
-        <action name="showEmp" class="empActionID" method="find">
+        <action name="findEmp" class="empActionID" method="find">
 
         </action>
     </package>
