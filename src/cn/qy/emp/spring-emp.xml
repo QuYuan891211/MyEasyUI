@@ -26,12 +26,12 @@
         
       ">
       
-      <bean name="empDao" class="cn.qy.emp.dao.EmpDao"></bean>
-        <bean name="empService" class="cn.qy.emp.service.EmpService">
-            <property name="empDao" ref="empDao"></property>
+      <bean name="empDaoID" class="cn.qy.emp.dao.EmpDao"></bean>
+      <bean name="empServiceID" class="cn.qy.emp.service.EmpService">
+            <property name="empDao" ref="empDaoID"></property>
         </bean>
-    <bean name="empAction" class="cn.qy.emp.action.EmpAction">
-        <property name="empService" ref="empService"></property>
+    <bean name="empActionID" class="cn.qy.emp.action.EmpAction" scope="prototype">
+        <property name="empService" ref="empServiceID"></property>
     </bean>
 </beans>      
 

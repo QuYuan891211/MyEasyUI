@@ -54,7 +54,47 @@
                 </li>
             </ul>
         </div>
-        <div data-options="region:'center', split:false,title:'content',collapsible:true,iconCls:'icon-reload'" style="padding:5px;background:#eee;"></div>
+        <div id="center" data-options="region:'center', split:false,title:'content',collapsible:true,iconCls:'icon-reload'" style="padding:5px;background:#eee;">
+            <div id="add_emp_panel" class="easyui-panel"></div>
+        </div>
     </div>
+
+
+    <script type="text/javascript">
+        $("#tree").tree({
+            onClick:function (node) {
+                if("新增员工" == node.text){
+                    $("#add_emp_panel").empty();
+                   var $inputName = "<input type='text' id='empName' value='请输入姓名' class='easyui-validatebox' required=true data-options='font-size:50px'>"
+                    var $inputSal = "<input type='text' id='empSal' value='请输入薪水' data-options='font-size:50px'>"
+                    var $submit = "<button  id='submit' onclick='addEmp()' value='提交' style='width:100px;height:100px'>"
+                    $("#add_emp_panel").append($inputName);
+                    $("#add_emp_panel").append($inputSal);
+                    $("#add_emp_panel").append($submit);
+                }
+            }
+
+
+
+        })
+    </script>
+<script type="text/javascript">
+   function addEmp() {
+        var name = $("#empName").val();
+        var name = $("#empName").val();
+        var sal = $("#empSal").val();
+        if("请输入姓名" != name ||"请输入薪水" !=sal || "" != name){
+            var url = "${pageContext.request.contextPath}/addEmp?time=" + new Date().getTime();
+            var sendData = {
+               "emp.name" : name,
+                "emp.salary" : sal
+        }
+            $.post(url,sendData,function (backData) {
+
+            })
+        }
+
+    }
+</script>
 </body>
 </html>

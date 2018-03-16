@@ -24,17 +24,5 @@ public class EmpDao {
        return  queryRunner.query(sql,new BeanListHandler<>(Emp.class));
     }
 
-    public static void main(String [] args) throws SQLException {
-       EmpDao empDao = new EmpDao();
-//        Emp emp = new Emp();
-//        emp.setId();
-//        emp.setName("caoxi");
-//        emp.setSal(100);
-//        empDao.add(emp);
-          List<Emp> list =  empDao.findAllRecord();
-          for(Emp emp:list){
 
-              System.out.println("ID: " + emp.getId() + "  name:" + emp.getName() + "  sal:" +emp.getSalary());
-          }
-    }
 }

@@ -5,12 +5,10 @@ import cn.qy.emp.service.EmpService;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class EmpAction extends ActionSupport{
+    private EmpService empService;
     public void setEmpService(EmpService empService) {
         this.empService = empService;
     }
-
-    private EmpService empService;
-
 
 
     public Emp getEmp() {
@@ -23,7 +21,8 @@ public class EmpAction extends ActionSupport{
 
     private Emp emp;
 
-    public String add() throws Exception{
+    public String addEmp() throws Exception{
+        emp.setId();
         empService.add(emp);
         return "success";
     }

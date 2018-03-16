@@ -14,26 +14,9 @@
 		》在Action中写一个getXxx()方法返回需要转成JSON字符串的对象 
 	-->
 
-<package name="provincePackage" extends="json-default" namespace="/">
-	<global-results>
-		<result name="SUCCESS" type="json"/>
-	</global-results>
-	<action name="findCityRequest" method="findCityByProvince" class="cn.qy.province.action.ProvinceCityAreaAction">
-	</action>
-	<action name="findAreaRequest" method="findAreaByCity" class="cn.qy.province.action.ProvinceCityAreaAction">
-	</action>
-</package>
 
-	<package name="empPackage" extends="json-default" namespace="/">
-		<global-results>
-			<result name="success" type="dispatcher">/show.jsp</result>
-		</global-results>
-		<action name="addEmp" class="cn.qy.emp.action.EmpAction" method="add">
 
-		</action>
-		<action name="showEmp" class="cn.qy.emp.action.EmpAction" method="find">
-
-		</action>
-	</package>
+<include file="cn/qy/emp/struts-emp.xml"></include>
+	<include file="cn/qy/province/struts-province.xml"></include>
 
 </struts>
